@@ -1,0 +1,20 @@
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    print(__name__)
+    print("printing to terminal...")
+    return "uwu"
+
+@app.route("/owo")
+def owo():
+    return "owo"
+
+@app.route("/x3")
+def x3():
+    return "x3"
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
