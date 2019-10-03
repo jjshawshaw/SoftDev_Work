@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
 import cgi
 
 app = Flask(__name__)
@@ -21,11 +22,17 @@ def authenticate():
     us= request.args['username']
     pw= request.args['password']
     if us == "fredGang" and pw == "softdev":
-        return "Welcome"
+        return redirect("/welcome")
     else:
-        return "Error"
+        return redirect("/error")
 
+@app.route("/welcome")
+def welcome():
+    return "Welcome"
 
+@app.route("/error")
+def error():
+    return "Wrong username or password"
 
 
 if __name__ == "__main__":
