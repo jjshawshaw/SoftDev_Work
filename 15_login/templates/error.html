@@ -3,5 +3,8 @@
 {% block title %} Error {% endblock %}
 
 {% block content %}
-  Incorrect username or password
+  {% for message in get_flashed_messages() %}
+    {{ message }}<br>
+  {% endfor %}
+  <a href="/">Back to Home</a>
 {% endblock %}

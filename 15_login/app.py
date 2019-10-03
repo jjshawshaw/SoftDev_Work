@@ -9,6 +9,7 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import session
+from flask import flash
 import os
 
 # creates flask app
@@ -31,6 +32,10 @@ def authenticate():
         session['loggedIn'] = True
         return redirect("/welcome")
     else:
+        if session['username'] != "fredGang":
+            flash("Incorrect username")
+        if session['password'] != "softdev":
+            flash("Incorrect password")
         print(f"{session['username']} {session['password']}")
         return redirect("/error")
 
