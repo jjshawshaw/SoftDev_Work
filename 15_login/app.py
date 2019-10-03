@@ -42,6 +42,13 @@ def welcome():
 def error():
     return render_template("error.html")
 
+@app.route("/logout")
+def logout():
+    session.pop('username')
+    session.pop('password')
+    session.pop('loggedIn')
+    return redirect("/")
+
 
 if __name__ == "__main__":
     app.debug = True
