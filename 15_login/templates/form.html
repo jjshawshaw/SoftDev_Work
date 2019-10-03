@@ -1,18 +1,14 @@
-<!DOCTYPE HTML>
+{% extends "default.html" %}
 
-<html>
-  <head>
-      <title> Form </title>
-  </head>
-  <body>
-    <pre>
-      {{ header }}
-      </pre>
-    <form action="/auth">
+{% block title %} Form {% endblock %}
+
+{% block content %}
+
+    <form action="/auth" method="post">
       Username:<br>
       <input type="text" name="username"><br>
+      Password:<br>
       <input type="text" name="password"><br>
-      <input type="submit" name="sub1">
-    </form>
-  </body>
-</html>
+      <input type="submit" name="sub1" >
+
+{% endblock %}
