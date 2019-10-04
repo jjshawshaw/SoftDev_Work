@@ -1,0 +1,10 @@
+{% extends "default.html" %} <!-- implements default.html template -->
+
+{% block title %} Error {% endblock %}
+
+{% block content %}
+  {% for message in get_flashed_messages() %} <!-- displays flashed messages from authenticate() function -->
+    {{ message }}<br>
+  {% endfor %}
+  <a href="/">Back to Home</a> <!-- links back to login page -->
+{% endblock %}
