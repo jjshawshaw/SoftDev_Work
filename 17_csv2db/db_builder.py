@@ -19,7 +19,7 @@ c.execute("CREATE TABLE IF NOT EXISTS students(name TEXT, age INTEGER, id INTEGE
 with open("students.csv") as csvFile: #read in student.csv
     reader = csv.DictReader(csvFile) #create DictReader
     for row in reader:
-        c.execute(f"INSERT INTO students VALUES (\"{row['name']}\", \"{row['age']}\", \"{row['id']}\");")
+        c.execute(f"INSERT INTO students VALUES (\"{row['name']}\", {row['age']}, {row['id']});")
             #insert each row into the student table
 
 ## creates courses table if the table does not exist
@@ -27,7 +27,7 @@ c.execute("CREATE TABLE IF NOT EXISTS courses(code TEXT, mark INTEGER, id INTEGE
 with open("courses.csv") as csvFile: #read in courses.csv
     reader = csv.DictReader(csvFile) #create DictReader
     for row in reader:
-        c.execute(f"INSERT INTO courses VALUES (\"{row['code']}\", \"{row['mark']}\", \"{row['id']}\");")
+        c.execute(f"INSERT INTO courses VALUES (\"{row['code']}\", {row['mark']}, {row['id']});")
             #insert each row into the courses table
 
 #==========================================================
