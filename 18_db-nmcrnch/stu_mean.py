@@ -1,4 +1,4 @@
-#Justin Shaw
+#Justin Shaw and Michael Lin
 #SoftDev1 pd1
 #K18 -- Average
 #2019-10-15
