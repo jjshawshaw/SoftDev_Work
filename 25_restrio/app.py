@@ -27,7 +27,23 @@ def met_api_request():
     print(parsed)
     return render_template("met.html", to_render=parsed, title="Met collection API")
 
+@app.route("/exchangerate")
+def currency_api_request():
+    url = "https://api.exchangerate-api.com/v4/latest/AUD"
+    request = urllib.request.urlopen(url).read()
+    print(request)
+    parsed = json.loads(request)
+    print(parsed)
+    return render_template("currency.html", to_render=parsed, title="Exchange rate API")
 
+@app.route("/rickandmorty")
+def randm_api_request():
+    url = "https://rickandmortyapi.com/api/episode/31"
+    request = urllib.request.urlopen(url).read()
+    print(request)
+    parsed = json.loads(request)
+    print(parsed)
+    return render_template("randm.html", to_render=parsed, title="Rick and Morty API")
 
 
 if __name__ == "__main__":

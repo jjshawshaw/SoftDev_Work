@@ -1,0 +1,7 @@
+{% block content %}
+    <h1>{{ to_render['base'] }}</h1>
+    {% for curr in to_render['rates'] %}
+      {{ curr }}: {{ to_render['rates'][curr] }} <br>
+    {% endfor %}
+    <a href="/">back</a>
+{% endblock content%}
