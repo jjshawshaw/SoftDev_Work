@@ -39,5 +39,34 @@ var randomStudent = function(){
 };
 
 // buttons
+//factorial button
 var factbutton = document.getElementById("fact")
-factbutton.addEventListener('click', function(){console.log(fact(17));})
+var fact_click = function(){
+  console.log(fact(17));
+  document.getElementById("fact_out").innerHTML = fact(17);
+}
+factbutton.addEventListener('click', fact_click)
+
+// fibonacci button
+var fibbutton = document.getElementById("fib")
+var fib_click = function(){
+  console.log(fib(13));
+  document.getElementById("fib_out").innerHTML = fib(13);
+}
+fibbutton.addEventListener('click', fib_click)
+
+// gcd button
+var gcdbutton = document.getElementById("gcd")
+var gcd_click = function(){
+  console.log(gcd(1125, 630));
+  document.getElementById("gcd_out").innerHTML = gcd(1125, 630);
+}
+gcdbutton.addEventListener('click', gcd_click)
+
+// randomStudent button
+var rsbutton = document.getElementById("rs")
+var rs_click = function(){
+  console.log(randomStudent());
+  document.getElementById("rs_out").innerHTML = randomStudent();
+}
+rsbutton.addEventListener('click', rs_click)
