@@ -34,3 +34,64 @@ var addItem = function(e){
 
 var button = document.getElementById('b');
 button.addEventListener('click', addItem);
+
+var fib = function(n){
+  if (n < 2) {
+    return 1
+  } else {
+    return fib(n - 1) + fib(n - 2)
+  }
+}
+
+var i = 0
+var addFib = function(e){
+  console.log("creating fib");
+  var new_fib = document.createElement("button");
+  e.target.insertAdjacentElement("afterend", new_fib);
+  new_fib.insertAdjacentHTML("beforebegin", "<br>");
+  new_fib.innerHTML = "Next Fibonacci Number";
+  var fib_list = document.createElement("ol");
+  new_fib.insertAdjacentElement("afterend", fib_list);
+  new_fib.addEventListener( 'click', function(){
+    var item = document.createElement('li');
+    item.innerHTML = fib(i);
+    fib_list.appendChild(item);
+    i++;
+  });
+};
+
+// dynamic fibonacci
+var i_dyn = 0;
+var dyn_list = [1, 1];
+var addFib2 = function(e){
+  console.log("creating fib");
+  var new_fib = document.createElement("button");
+  e.target.insertAdjacentElement("afterend", new_fib);
+  new_fib.insertAdjacentHTML("beforebegin", "<br>");
+  new_fib.innerHTML = "Next Fibonacci Number";
+  var fib_list = document.createElement("ol");
+  new_fib.insertAdjacentElement("afterend", fib_list);
+  new_fib.addEventListener( 'click', function(){
+    var item = document.createElement('li');
+    var next_fib;
+    if (i_dyn < 2){
+      item. innerHTML = dyn_list[i_dyn];
+    } else {
+      ans = dyn_list[0] + dyn_list[1]
+      dyn_list[0] = dyn_list[1]
+      dyn_list[1] = ans
+      item.innerHTML = ans
+    }
+    i_dyn++;
+    fib_list.appendChild(item);
+  });
+};
+
+
+
+
+var list = document.getElementById("thelist")
+var item = document.createElement('li');
+
+var fb = document.getElementById("fb");
+fb.addEventListener('click', addFib2)
