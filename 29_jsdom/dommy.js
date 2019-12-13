@@ -11,7 +11,7 @@ K29 -- Sequential Progression III: Season of the Witch
 
 var changeHeading = function(e){
   var h = document.getElementById("h");
-  if (e.type == "mouseover"){
+  if (e.type === "mouseover"){
     h.innerHTML = e.target.innerHTML;
   } else {
     h.innerHTML = "Hello World!";
@@ -97,6 +97,31 @@ var addFib2 = function(e){
   });
 };
 
+var pascal = function(n){
+  l = [1];
+  for (var i = 0; i < n; i++){
+    l.push(l[i] * (n-i) / (i+1));
+  };
+  return l;
+};
+
+line = 0
+var addTri = function(e){
+  console.log("creating triangle");
+  var new_tri = document.createElement("button");
+  e.target.insertAdjacentElement("afterend", new_tri);
+  new_tri.insertAdjacentHTML("beforebegin", "<br>");
+  new_tri.innerHTML = "Next Pascal Line";
+  var tri_list = document.createElement("ol");
+  new_tri.insertAdjacentElement("afterend", tri_list);
+  new_tri.addEventListener( 'click', function(){
+    var item = document.createElement('li');
+    item.innerHTML = "<style=\"text-align:center;\">" + pascal(line) + "</style>";
+    tri_list.appendChild(item);
+    line++;
+  });
+};
+
 
 
 
@@ -105,3 +130,6 @@ var item = document.createElement('li');
 
 var fb = document.getElementById("fb");
 fb.addEventListener('click', addFib2)
+
+var p = document.getElementById("p");
+p.addEventListener('click', addTri)
