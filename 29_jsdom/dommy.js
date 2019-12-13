@@ -1,3 +1,13 @@
+/*
+Justin Shaw
+
+SoftDev1 pd1
+
+K29 -- Sequential Progression III: Season of the Witch
+
+2019-05-05
+*/
+
 
 var changeHeading = function(e){
   var h = document.getElementById("h");
