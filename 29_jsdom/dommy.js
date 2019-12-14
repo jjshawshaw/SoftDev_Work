@@ -1,5 +1,5 @@
 /*
-Justin Shaw
+Justin Shaw & Kevin Li
 
 SoftDev1 pd1
 
@@ -114,9 +114,10 @@ var addTri = function(e){
   new_tri.innerHTML = "Next Pascal Line";
   var tri_list = document.createElement("ol");
   new_tri.insertAdjacentElement("afterend", tri_list);
+  tri_list.style.textAlign = "center";
   new_tri.addEventListener( 'click', function(){
     var item = document.createElement('li');
-    item.innerHTML = "<style=\"text-align:center;\">" + pascal(line) + "</style>";
+    item.innerHTML = pascal(line);
     tri_list.appendChild(item);
     line++;
   });
