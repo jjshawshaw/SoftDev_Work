@@ -12,5 +12,7 @@ c.addEventListener("click", function(e){
     ctx.fillRect(event.clientX - rect.x, e.clientY - rect.y , BOX_SIDE_LENGTH, BOX_SIDE_LENGTH);
   } else {
     ctx.arc(e.clientX - rect.x, e.clientY - rect.y, CIRCLE_RADIUS, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
   }
 });
