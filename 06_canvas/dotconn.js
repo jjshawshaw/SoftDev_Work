@@ -1,3 +1,7 @@
+/* Coby Sontag and Justin Shaw
+   SoftDev pd1
+   K06 -- Dot Dot Dot
+   2020 - 02 - 12 --> */
 
 var prevcoor = []
 
