@@ -1,3 +1,8 @@
+/*Justin Shaw
+SoftDev pd1
+K07 -- They lock us in the tower whenever we get caught
+2020 - 02 - 13 */
+
 var playing = false;
 var growing = true;
 var radius = 20;
