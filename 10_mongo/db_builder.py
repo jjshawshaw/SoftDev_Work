@@ -17,4 +17,5 @@ for entry in data["data"]:
     ins = {}
     for i in range(len(fields)):
         ins[fields[i]] = entry[i]
+    ins[fields[11]] = ins[fields[11]].strip("POINT (").strip(")").split()
     db.entranceCollection.insert_one(ins)
