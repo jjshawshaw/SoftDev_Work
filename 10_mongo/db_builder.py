@@ -4,7 +4,7 @@
 #2020-03-04
 
 # data from https://catalog.data.gov/dataset/subway-entrances
-# contains the names, subway lines, and coordinates of all subway entrances in New York City,
+# Subway Entrances: contains the names, subway lines, and coordinates of all subway entrances in New York City,
 
 import json
 from pymongo import MongoClient
