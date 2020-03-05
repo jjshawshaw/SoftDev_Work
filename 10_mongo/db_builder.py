@@ -1,7 +1,10 @@
 #Justin Shaw and Clement Chan
 #SoftDev p1
 #K10 - Import/Export Bank
-#2002-03-04
+#2020-03-04
+
+# data from https://catalog.data.gov/dataset/subway-entrances
+# contains the names, subway lines, and coordinates of all subway entrances in New York City,
 
 import json
 from pymongo import MongoClient
