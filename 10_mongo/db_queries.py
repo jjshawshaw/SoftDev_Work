@@ -31,7 +31,7 @@ def get_by_location(lat, lon, r):
                       } } } )
 
 
-.
+
 lim = 10 # limit of results
 #terminal input
 """
