@@ -22,9 +22,10 @@ for field in data["meta"]["view"]["columns"]:
 #opens a client and creates a database called entrances
 client = MongoClient('localhost', 27017)
 db = client["entrances"]
+db.entranceCollection.drop()
 for entry in data["data"]:
     ins = {}
     for i in range(len(fields)):
         ins[fields[i]] = entry[i] #use fields to input data
-    ins[fields[11]] = ins[fields[11]].strip("POINT (").strip(")").split() #save coordinates as an array
+    ins[fields[11]] = {"type" : "Point", "coordinates" : list(map(float, ins[fields[11]].strip("POINT (").strip(")").split()))}#save coordinates as an array
     db.entranceCollection.insert_one(ins) #puts information into a collection called entranceCollection
