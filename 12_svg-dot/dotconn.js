@@ -1,29 +1,39 @@
-/* Coby Sontag and Justin Shaw
+/* Justin Shaw
    SoftDev pd1
-   K06 -- Dot Dot Dot
-   2020 - 02 - 12 --> */
+   K12 -- Connect the Dots
+   2020 - 02 - 30 --> */
 
 var prevcoor = []
 
 
 
-var c = document.getElementById('playground');
-var ctx = c.getContext("2d");
+var playground = document.getElementById('playground');
 
-c.addEventListener("click", function(e){
-  ctx.beginPath();
-  ctx.arc(e.offsetX, e.offsetY, 3, 0, Math.PI * 2);
-  ctx.fill();
+playground.addEventListener("click", function(e){
+  var circ = document.createElementNS("http://www.w3.org/2000/svg","circle");
+  circ.setAttribute("cx", e.offsetX);
+  circ.setAttribute("cy",  e.offsetY);
+  circ.setAttribute("r", 3);
+  circ.setAttribute("stroke", "black");
+  circ.setAttribute("fill", "black");
+  playground.appendChild(circ);
   if (prevcoor.length > 0){
-    ctx.lineTo(prevcoor[0], prevcoor[1]);
-    ctx.stroke();
+    var line = document.createElementNS("http://www.w3.org/2000/svg","line");
+    line.setAttribute("x1", prevcoor[0]);
+    line.setAttribute("y1", prevcoor[1]);
+    line.setAttribute("x2", e.offsetX);
+    line.setAttribute("y2", e.offsetY);
+    line.style.stroke = "black";
+    line.style.strokeWidth = 2;
+    playground.appendChild(line);
   }
-  ctx.closePath();
   prevcoor = [e.offsetX, e.offsetY];
 });
 
 document.getElementById('clear').addEventListener("click", function() {
   console.log("clr");
-  ctx.clearRect(0, 0, c.height, c.width);
   prevcoor = [];
+  while (playground.hasChildNodes()){
+    playground.removeChild(playground.lastChild);
+  }
 });
