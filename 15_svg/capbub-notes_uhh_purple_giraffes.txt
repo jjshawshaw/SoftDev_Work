@@ -1,0 +1,11 @@
+V1- I predict that all of the elements would alert their own innerHTML when clicked.
+       The page behaved as I predicted without anything notable.
+
+V2- I predict that each cell when clicked on will trigger 3 different events, each pop up displaying the innerHTML. I am going to guess that the events will occur according to the DOM hierarchy with the lowest in the hierarchy occurring first (td then tr then table)
+	I was correct in my prediction of the order of pop-ups, but I am not sure if that is due to their level in the DOM hierarchy or the order that they are assigned the event on the javascript file. It is also possible to click just the table and none of the cells inside the table, likely due the default padding set by the browser.
+
+V3- I predict that once the line is uncommented, when a cell is clicked only the first pop up (the inner HTML of the td element) will occur.
+	My prediction was incorrect, as only the popup with the innerHTML of the table occurs. While this initially made me think that maybe elements were added as a stack going down the DOM hierarchy and that stopPropagation stopped more events from being added to the stack, I realized I completely overlooked the third parameter when adding the event to the table element. When I removed the true input, the alert contained the innerHTML of the td element. When I commented out the stopPropagation() function and kept the true input, the innerHTML of the table occurred first, then td and tr. This led me to believe that stopPropagation() does prevent the events further down the stack, but the true input brings the event to the front of the stack.
+
+V4- I predict that the order will matter, as each event listener is added with the true input that brought the event to the top of the stack in V3. I expect the alert to display the reverse order of V1.
+	While the order that I predicted was correct, changing the order in the javascript did not change the order of the pop-ups. I found that the parameter acted differently than I predicted, as when two elements where both assigned the event with the true parameter, the alerts happened first, but in the order from highest in the hierarchy to lowest
