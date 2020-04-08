@@ -45,7 +45,7 @@ window.onload = function(){
         .style("padding", "3px")
         .style("margin", "1px")
         .text(d => d)
-        .transition()
+        .transition() //transition the width of the bars
           .duration(3000)
           .style("width", d => `${x(d)}px`);
 
