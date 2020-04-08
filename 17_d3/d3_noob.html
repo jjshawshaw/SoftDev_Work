@@ -42,16 +42,18 @@ window.onload = function(){
     .data(data)
     .join("div")
       .style("background", "steelblue")
-        .style("padding", "3px")
-        .style("margin", "1px")
-        .text(d => d)
-        .transition() //transition the width of the bars
-          .duration(3000)
-          .style("width", d => `${x(d)}px`);
+      .style("padding", "3px")
+      .style("margin", "1px")
+      .text(d => d)
+      .transition() //transition the width of the bars
+        .duration(4000)
+        .style("width", d => `${x(d)}px`)
+        .style("background", "red")
+        .style("color", "black");
 
   //background transition
   d3.select("body").transition()
-    .duration(3000)
+    .duration(4000)
     .style("background-color", "black");
   };
 </script>
