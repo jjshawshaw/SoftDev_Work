@@ -1,3 +1,13 @@
+Team D3spacito: Justin Shaw & Saad Bhuiyan
+SoftDev2 pd1
+K17 -- Deeper Into D3
+2020-04-08
+
+Let's make a bar chart
+
+- join() uses default logic for entering, updating, and exiting data.
+- scaleLinear() can be used to scale graphs
+
 Learn D3: By Example
 
 - Observable has an extensive gallery that can showcase features and provide templates for projects in D3.
