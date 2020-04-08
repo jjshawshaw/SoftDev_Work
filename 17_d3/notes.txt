@@ -1,0 +1,5 @@
+Learn D3: By Example
+
+- Observable has an extensive gallery that can showcase features and provide templates for projects in D3.
+- Observable javascript supports a with clause for import statements.
+- Observable dataflow updates data live, making dynamic visualizations easy.
