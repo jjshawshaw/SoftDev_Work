@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <h3>Rotten Tomatoes Score Visualization</h3>
+    <button id="render">Render</button>
+    <button id="transition">Transition</button><br>
+    <div id="chart"></div>
+    <script> var data = {{ data|tojson }} </script>
+    <script src="static/d3.js"></script>
+  </body>
+</html>
